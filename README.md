@@ -4,7 +4,7 @@ CS361-400 final project. Requires ionic framework and npm.
 ## Installation
 Clone repo
 ```
-$ git clone [ADD]
+$ git clone https://github.com/danieljarc/cs361_app.git
 ```
 'cd' into directory
 ```
