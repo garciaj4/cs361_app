@@ -9,10 +9,18 @@
 
 <ion-content padding>
 	<ion-list>
+		<ion-item text-wrap>
+			<h2>Swipeable List View</h2>
+			<p>
+				This view is a list of all reminders. Reminders can be added by 
+				using the add button on the top right and removed by swiping the 
+				reminder text left to expose a delete button.
+			</p>
+		</ion-item>
 		<ion-item-sliding *ngFor="let reminder of reminders">
 			<ion-item>
-				<h2>{{reminder.r_name}}</h2>
-				<h3>{{reminder.r_time}}</h3>
+				<h3>{{reminder.r_name}}</h3>
+				<h4>{{reminder.r_time}}</h4>
 				<p>{{reminder.r_description}}</p>
 			</ion-item>
 			<ion-item-options>

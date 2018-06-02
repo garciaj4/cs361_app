@@ -6,9 +6,19 @@
 
 <ion-content>
 	<ion-list>
+		<ion-item text-wrap>
+			<h2>Log List View</h2>
+			<p>
+				This view is a list of all log entries. Log entries are automatically 
+				generated when the user interacts with the app. In the final implementation 
+				additional log summary data will be displayed and an option to generate a log 
+				report will be added.
+			</p>
+		</ion-item>
+		
 		<ion-item *ngFor="let entry of log">
-			<p>{{entry.l_description}}</p>
-			<h3>{{entry.l_time}}</h3>
+			<h3>{{entry.l_description}}</h3>
+			<p>{{entry.l_time}}</p>
 		</ion-item>
 	</ion-list>
 </ion-content>
