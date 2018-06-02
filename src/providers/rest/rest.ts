@@ -89,14 +89,12 @@ export class RestProvider {
 		headers = headers.set('x-access-token', '9fd1e1d9bce5013471460beac181d183');
 		
 		return new Promise(resolve => {
-			this.http.get(this.UVapiUrl, { headers }).subscribe(data => {
+			this.http.get(this.UVapiUrl, {headers}).subscribe(data => {
 				resolve(data);
-				console.log(data);
 			}, err => {
 				console.log(err);
 			});
 		});
-		
 		
 		
 	}

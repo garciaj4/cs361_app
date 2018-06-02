@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { RestProvider } from '../../providers/rest/rest';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
 	selector: 'page-home',
@@ -8,16 +9,16 @@ import { RestProvider } from '../../providers/rest/rest';
 })
 export class HomePage {
 	
-	uvData: any;
+	uvData: Observable<any>;
 	
-	constructor(public navCtrl: NavController, public restProvider: RestProvider) {
-		console.log('HomePage created');
-		
-		this.uvData = {};
-		
-		this.restProvider.getUV().then(data => {
-			this.uvData = data.result;
-		});
-		
+	constructor(public navCtrl: NavController, public http: HttpClient) {
+		let headers = new HttpHeaders();
+		headers = headers.set('x-access-token', '9fd1e1d9bce5013471460beac181d183');
+		this.uvData = this.http.get('https://api.openuv.io/api/v1/uv?lat=44.5&lng=-123.2', {headers});
+		this.uvData
+		.subscribe(data => {
+			this.uvData = data.result; 
+			console.log('my data: ', data);
+		})
 	}
 }
