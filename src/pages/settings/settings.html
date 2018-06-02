@@ -1,0 +1,36 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Settings</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+		<ion-list-header>Notifications</ion-list-header>
+		<ion-item>
+			<ion-label>20-20-20</ion-label>
+			<ion-toggle [(ngModel)]="twentymin"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-label>2 hr</ion-label>
+			<ion-toggle [(ngModel)]="twohour"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-label>Contacts Usage</ion-label>
+			<ion-toggle [(ngModel)]="contacts"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-label>Reminders</ion-label>
+			<ion-toggle [(ngModel)]="reminders"></ion-toggle>
+		</ion-item>
+		<ion-list-header>Privacy</ion-list-header>
+		<ion-item>
+			<ion-label>Location Services</ion-label>
+			<ion-toggle [(ngModel)]="location"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-label>Background Refresh</ion-label>
+			<ion-toggle [(ngModel)]="background"></ion-toggle>
+		</ion-item>
+	</ion-list>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Add Reminder</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<form (ngSubmit)="addReminder()">
+		<ion-item>
+			<ion-label>Name</ion-label>
+			<ion-input type="text" [(ngModel)]="reminder.r_name" [ngModelOptions]="{standalone: true}"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Description</ion-label>
+			<ion-input type="text" [(ngModel)]="reminder.r_description" [ngModelOptions]="{standalone: true}"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Date</ion-label>
+			<ion-datetime displayFormat="MM/DD/YYYY HH:mm" [(ngModel)]="reminder.r_time" [ngModelOptions]="{standalone: true}" ></ion-datetime>
+		</ion-item>
+		<button ion-button type="submit" block>Create</button>
+	</form>
+</ion-content>

@@ -1,17 +1,56 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>My Eye Health</ion-title>
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+	
+	<ion-item>
+		<h1>[INSERT TIMER]</h1>
+		<h2>[INSERT PROGRESS BAR]</h2>
+	</ion-item> 
+	
+	<ion-card>
+		<ion-card-header>
+			UV Data
+		</ion-card-header>
+
+		<ion-list>
+			<ion-item>
+				<ion-icon name="compass" item-start></ion-icon>
+				<h3>Location</h3>
+				<p>Corvallis, OR</p>
+			</ion-item> 
+
+			<ion-item>
+				<ion-icon name="sunny" item-start></ion-icon>
+				<h3>Current Index</h3>
+				<h4>{{uvData.uv}}</h4>
+				<p>{{uvData.uv_time}}</p>
+			</ion-item> 
+
+			<ion-item>
+				<ion-icon name="sunny" item-start></ion-icon>
+				<h3>Max Index</h3>
+				<h4>{{uvData.uv_max}}</h4>
+				<p>{{uvData.uv_max_time}}</p>
+			</ion-item>
+			
+			<ion-item>
+				<ion-icon name="cloud" item-start></ion-icon>
+				<h3>Ozone Level</h3>
+				<h4>{{uvData.ozone}}</h4>
+				<p>{{uvData.ozone_time}}</p>
+			</ion-item>
+		</ion-list>
+		
+		<ion-card-content>
+			This data is currently pulled from the OpenUV API for Corvallis, but will utilize user location information in our final build.
+		</ion-card-content>
+	</ion-card>
+	
 </ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>Reminders</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="addReminder()"><ion-icon name="add-circle"></ion-icon></button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-list>
+		<ion-item-sliding *ngFor="let reminder of reminders">
+			<ion-item>
+				<h2>{{reminder.r_name}}</h2>
+				<h3>{{reminder.r_time}}</h3>
+				<p>{{reminder.r_description}}</p>
+			</ion-item>
+			<ion-item-options>
+				<button ion-button color="danger" (click)="deleteReminder(reminder)">Delete</button>
+			</ion-item-options>	
+		</ion-item-sliding>
+	</ion-list>
+</ion-content>
