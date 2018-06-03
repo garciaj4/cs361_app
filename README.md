@@ -10,7 +10,7 @@ $ git clone https://github.com/danieljarc/cs361_app.git
 ```
 $ cd cs361_app
 ```
-Install dependancies
+Install dependencies
 ```
 $ npm install
 ```
