@@ -1,9 +1,23 @@
 <ion-header>
 	<ion-navbar>
-		<ion-title>User</ion-title>
+		<ion-title>User Information</ion-title>
 	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
-	<p>User account information</p>
+
+	<h2>User Information</h2>
+	<p>
+		This view will dispaly the user information for whichever user is currently logged in.
+	</p>
+
+	<ion-item-sliding *ngFor="let user of users">
+		<ion-item>
+			<h3>First Name: {{user.fname}}</h3>
+			<h3>Last Name: {{user.lname}}</h3>
+			<h3>Email: {{user.email}}</h3>
+			<button ion-button color="danger" (click)="deleteUser(user)">Delete User Account</button>
+		</ion-item>
+	</ion-item-sliding>
+
 </ion-content>

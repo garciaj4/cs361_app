@@ -14,7 +14,6 @@ export class RestProvider {
 	
 	// Display Reminders
 	getReminders() {
-		
 		return new Promise(resolve => {
 			this.http.get('http://flip3.engr.oregonstate.edu:7730/reminders').subscribe(data => {
 				resolve(data);
@@ -95,9 +94,36 @@ export class RestProvider {
 				console.log(err);
 			});
 		});
-		
-		
 	}
+
+	createUser(){
 	
-	
+	}
+
+	login(){
+
+	}
+
+	//this should accept an id and probably a jwt token to get user data
+	//currently hardcoded for user 1
+	getUser(){
+		return new Promise(resolve => {
+			this.http.get('http://flip3.engr.oregonstate.edu:7730/user?id=1').subscribe(data => {
+				resolve(data);
+			}, err => {
+				console.log(err);
+			});
+		});
+	}
+
+	deleteUser(id) {
+
+		return new Promise(resolve => {
+			this.http.delete('http://flip3.engr.oregonstate.edu:7730/user/' + id).subscribe(data => {
+				resolve(data);
+			}, err => {
+				console.log(err);
+			});
+		});
+	}
 }
